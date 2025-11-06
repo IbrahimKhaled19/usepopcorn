@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Calendar } from "lucide-react";
 const Movie = ({ movie }) => {
   return (
     <li key={movie.imdbID}>
@@ -7,7 +7,9 @@ const Movie = ({ movie }) => {
       <h3>{movie.Title}</h3>
       <div>
         <p>
-          <span>🗓</span>
+          <span>
+            <Calendar size={20} />
+          </span>
           <span>{movie.Year}</span>
         </p>
       </div>
