@@ -1,4 +1,3 @@
-import React from "react";
 import WatchedMovie from "./WatchedMovie";
 const WatchedMoviesList = ({ watched }) => {
   return (

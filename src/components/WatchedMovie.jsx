@@ -1,5 +1,3 @@
-import React from "react";
-
 const WatchedMovie = ({ movie }) => {
   return (
     <li key={movie.imdbID}>

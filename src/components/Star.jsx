@@ -1,5 +1,3 @@
-import React from "react";
-
 const Star = ({ onRate, full, onHoverIn, onHoverOut, size = 48, color }) => {
   const starStyle = {
     width: `${size}px`,

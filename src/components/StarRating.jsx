@@ -1,16 +1,6 @@
-import React from "react";
 import Star from "./Star";
 import { useState } from "react";
-
-const containerStyle = {
-  display: "flex",
-  alignItems: "center",
-  gap: "16px",
-};
-
-const starContainerStyle = {
-  display: "flex",
-};
+import PropTypes from "prop-types";
 
 const StarRating = ({
   maxRating = 10,
@@ -19,20 +9,32 @@ const StarRating = ({
   className,
   messages = [],
   defaultRating = 0,
-  onSetRating,
+  onSetRating = () => {},
 }) => {
+  //  --- State ---
+  const [rating, setRating] = useState(defaultRating);
+  const [tempRating, setTempRating] = useState(defaultRating);
+  // --- Handlers ---
   function handleRating(rating) {
     setRating(rating);
     onSetRating(rating);
   }
+  // --- Styles ---
   const textStyle = {
     lineHeight: "1",
     margin: "0",
     color,
     fontSize: `${size / 1.5}px`,
   };
-  const [rating, setRating] = useState(defaultRating);
-  const [tempRating, setTempRating] = useState(defaultRating);
+  const containerStyle = {
+    display: "flex",
+    alignItems: "center",
+    gap: "16px",
+  };
+
+  const starContainerStyle = {
+    display: "flex",
+  };
   return (
     <div style={containerStyle} className={className}>
       <div style={starContainerStyle}>
@@ -56,5 +58,13 @@ const StarRating = ({
     </div>
   );
 };
-
+StarRating.propTypes = {
+  maxRating: PropTypes.number,
+  defaultRating: PropTypes.number,
+  color: PropTypes.string,
+  size: PropTypes.number,
+  messages: PropTypes.array,
+  className: PropTypes.string,
+  onSetRating: PropTypes.func,
+};
 export default StarRating;
