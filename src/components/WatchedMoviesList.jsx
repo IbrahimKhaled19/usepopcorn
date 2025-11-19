@@ -1,11 +1,11 @@
 import WatchedMovie from "./WatchedMovie";
+import List from "./List";
 const WatchedMoviesList = ({ watched }) => {
   return (
-    <ul className="list">
-      {watched.map((movie) => (
-        <WatchedMovie movie={movie} key={movie.imdbID} />
-      ))}
-    </ul>
+    <List
+      data={watched}
+      renderItem={(movie) => <WatchedMovie movie={movie} key={movie.imdbID} />}
+    />
   );
 };
 

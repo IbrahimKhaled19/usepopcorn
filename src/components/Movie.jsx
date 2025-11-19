@@ -1,18 +1,15 @@
 import { Calendar } from "lucide-react";
+import MovieCard from "./MovieCard";
 const Movie = ({ movie }) => {
   return (
-    <li key={movie.imdbID}>
-      <img src={movie.Poster} alt={`${movie.Title} poster`} />
-      <h3>{movie.Title}</h3>
-      <div>
-        <p>
-          <span>
-            <Calendar size={20} />
-          </span>
-          <span>{movie.Year}</span>
-        </p>
-      </div>
-    </li>
+    <MovieCard movie={movie}>
+      <p>
+        <span>
+          <Calendar size={20} />
+        </span>
+        <span>{movie.Year}</span>
+      </p>
+    </MovieCard>
   );
 };
 
