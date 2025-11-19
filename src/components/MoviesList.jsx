@@ -1,5 +1,6 @@
 import Movie from "./Movie";
 import List from "./List";
+import { memo } from "react";
 function MoviesList({ movies }) {
   return (
     <List
@@ -8,4 +9,4 @@ function MoviesList({ movies }) {
     />
   );
 }
-export default MoviesList;
+export default memo(MoviesList);

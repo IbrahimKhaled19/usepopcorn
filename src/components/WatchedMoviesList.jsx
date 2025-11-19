@@ -1,5 +1,6 @@
 import WatchedMovie from "./WatchedMovie";
 import List from "./List";
+import { memo } from "react";
 const WatchedMoviesList = ({ watched }) => {
   return (
     <List
@@ -9,4 +10,4 @@ const WatchedMoviesList = ({ watched }) => {
   );
 };
 
-export default WatchedMoviesList;
+export default memo(WatchedMoviesList);

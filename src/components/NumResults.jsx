@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 const NumResults = ({ movies }) => {
   return (
     <p className="num-results">
@@ -6,4 +8,4 @@ const NumResults = ({ movies }) => {
   );
 };
 
-export default NumResults;
+export default memo(NumResults);

@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
 
@@ -30,4 +32,4 @@ function Summary({ watched }) {
     </div>
   );
 }
-export default Summary;
+export default memo(Summary);
